@@ -75,14 +75,14 @@
 <script>
     const eligibleBox=document.getElementById('eligible-box-rewards');
     const btn=document.getElementById('shein-btn-rewards');
-    const affId=Math.random()<0.65?"16188":"15802";
-    const linkUS=`https://rewarduplevel.com/aff_c?offer_id=1358&aff_id=${affId}`;
-    const linkCA=`https://rewarduplevel.com/aff_c?offer_id=1224&aff_id=${affId}`;
-    const linkAU=`https://rewarduplevel.com/aff_c?offer_id=1224&aff_id=${affId}`;
-    const linkGB=`https://rewarduplevel.com/aff_c?offer_id=1358&aff_id=${affId}`;
-    const linkRest65="https://rewardorbit.com/r/eyJ0Ijoic2hlaW4iLCJ1IjoiNjgyYjcxZjQxNmM0OTJmNjg5MDU2NTAyIiwiYSI6Ijc1MCIsInRzIjoxNzU3MDg2ODE4MDE2fQ?amount=750";
-    const linkRest35="https://rewardorbit.com/r/eyJ0Ijoic2hlaW4iLCJ1IjoiNjdkNTliZmEzNjlmZTUyYjM5YTAwOTdmIiwiYSI6Ijc1MCIsInRzIjoxNzU3MTAyMzU2MzczfQ?amount=750";
-    const linkRest=Math.random()<0.65?linkRest65:linkRest35;
+    const affId=Math.random()<0.60?"16188":"15802";
+    const linkUS=`https://glctrk.org/aff_c?offer_id=3091&aff_id=${affId}`;
+    const linkCA=`https://glctrk.org/aff_c?offer_id=3105&aff_id=${affId}`;
+    const linkAU=`https://glctrk.org/aff_c?offer_id=3105&aff_id=${affId}`;
+    const linkGB=`https://glctrk.org/aff_c?offer_id=3105&aff_id=${affId}`;
+    const linkRest60="https://rewardorbit.com/r/eyJ0Ijoic2hlaW4iLCJ1IjoiNjgyYjcxZjQxNmM0OTJmNjg5MDU2NTAyIiwiYSI6Ijc1MCIsInRzIjoxNzU3MDg2ODE4MDE2fQ?amount=750";
+    const linkRest40="https://rewardorbit.com/r/eyJ0Ijoic2hlaW4iLCJ1IjoiNjdkNTliZmEzNjlmZTUyYjM5YTAwOTdmIiwiYSI6Ijc1MCIsInRzIjoxNzU3MTAyMzU2MzczfQ?amount=750";
+    const linkRest=Math.random()<0.60?linkRest60:linkRest40;
     function countryCodeToFlagEmoji(cc){if(!cc||cc.length!==2)return"";return String.fromCodePoint(...[...cc.toUpperCase()].map(c=>127397+c.charCodeAt()));}
     function setEligible(cc,cn){eligibleBox.textContent=`✅ You are eligible – ${cn} ${countryCodeToFlagEmoji(cc)}`;if(cc==="US"){btn.href=linkUS;}else if(cc==="CA"){btn.href=linkCA;}else if(cc==="GB"){btn.href=linkGB;}else if(cc==="AU"){btn.href=linkAU;}else{btn.href=linkRest;}}
     fetch('https://ipapi.co/json/').then(r=>r.ok?r.json():Promise.reject()).then(d=>{if(d&&d.country&&d.country_name){setEligible(d.country,d.country_name);}else{throw new Error();}}).catch(()=>{fetch('https://ipwho.is/').then(r=>r.ok?r.json():Promise.reject()).then(d=>{if(d&&d.country_code&&d.country){setEligible(d.country_code,d.country);}else{throw new Error();}}).catch(()=>{eligibleBox.textContent="✅ You are eligible 🌍";btn.href=linkRest;});});</script>
