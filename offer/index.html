@@ -74,52 +74,82 @@ body{background:#fff;margin:0;font-family:'Montserrat',sans-serif;color:#000;}
 <img class="proof-image" src="https://i.postimg.cc/3NWCSpDv/upscalemedia-transformed-1.jpg"/>
 
 <script>
-const eligibleBox=document.getElementById('eligible-box');
-const btn=document.getElementById('shein-btn');
+const eligibleBox = document.getElementById('eligible-box');
+const btn = document.getElementById('shein-btn');
 
-const mainBucket=Math.random()<0.60;
+/* ===============================
+   🔒 STICKY 60/40 BUCKET
+================================ */
+let bucket = localStorage.getItem("shein_bucket");
 
-const linkMainT1="https://glctrk.org/aff_c?offer_id=1358&aff_id=149371";
-const linkMainROW="https://rewardorbit.com/r/eyJ0Ijoic2hlaW4iLCJ1IjoiNjhlNzE4MGNkZTcwYTE2OTdiZDI4NTk3IiwiYSI6Ijc1MCIsInRzIjoxNzY1MzEzODM0NTE2fQ?amount=750";
-
-const linkUS="https://glctrk.org/aff_c?offer_id=3091&aff_id=15802";
-const linkT1="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
-const linkROW="https://rewardorbit.com/r/eyJ0Ijoic2hlaW4iLCJ1IjoiNjdkNTliZmEzNjlmZTUyYjM5YTAwOTdmIiwiYSI6Ijc1MCIsInRzIjoxNzY1MjMyNDg5MjAyfQ?amount=750";
-
-function countryCodeToFlagEmoji(cc){
-  if(!cc||cc.length!==2)return"";
-  return String.fromCodePoint(...[...cc.toUpperCase()].map(c=>127397+c.charCodeAt()));
+if (!bucket) {
+  bucket = Math.random() < 0.60 ? "main" : "alt";
+  localStorage.setItem("shein_bucket", bucket);
 }
 
-function setEligible(cc,cn){
-  eligibleBox.textContent=`✅ You are eligible – ${cn} ${countryCodeToFlagEmoji(cc)}`;
+const isMainBucket = bucket === "main";
 
-  if(mainBucket){
-    if(cc==="US"||cc==="CA"||cc==="GB"||cc==="AU"){
-      btn.href=linkMainT1;
+/* ===============================
+   🔗 OFFER LINKS
+================================ */
+const linkMainT1 = "https://glctrk.org/aff_c?offer_id=1358&aff_id=149371";
+const linkMainROW = "https://rewardorbit.com/r/eyJ0Ijoic2hlaW4iLCJ1IjoiNjhlNzE4MGNkZTcwYTE2OTdiZDI4NTk3IiwiYSI6Ijc1MCIsInRzIjoxNzY1MzEzODM0NTE2fQ?amount=750";
+
+const linkUS = "https://glctrk.org/aff_c?offer_id=3091&aff_id=15802";
+const linkT1 = "https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
+const linkROW = "https://rewardorbit.com/r/eyJ0Ijoic2hlaW4iLCJ1IjoiNjdkNTliZmEzNjlmZTUyYjM5YTAwOTdmIiwiYSI6Ijc1MCIsInRzIjoxNzY1MjMyNDg5MjAyfQ?amount=750";
+
+/* ===============================
+   🌍 HELPERS
+================================ */
+function countryCodeToFlagEmoji(cc){
+  if(!cc || cc.length !== 2) return "";
+  return String.fromCodePoint(...[...cc.toUpperCase()].map(c => 127397 + c.charCodeAt()));
+}
+
+function setEligible(cc, cn){
+  eligibleBox.textContent = `✅ You are eligible – ${cn} ${countryCodeToFlagEmoji(cc)}`;
+
+  if (isMainBucket) {
+    if (cc === "US" || cc === "CA" || cc === "GB" || cc === "AU") {
+      btn.href = linkMainT1;
     } else {
-      btn.href=linkMainROW;
+      btn.href = linkMainROW;
     }
     return;
   }
 
-  if(cc==="US"){
-    btn.href=linkUS;
-  } else if(cc==="CA"||cc==="GB"||cc==="AU"){
-    btn.href=linkT1;
+  if (cc === "US") {
+    btn.href = linkUS;
+  } else if (cc === "CA" || cc === "GB" || cc === "AU") {
+    btn.href = linkT1;
   } else {
-    btn.href=linkROW;
+    btn.href = linkROW;
   }
 }
 
+/* ===============================
+   📡 GEO DETECTION
+================================ */
 fetch('https://ipapi.co/json/')
-.then(r=>r.ok?r.json():Promise.reject())
-.then(d=>{if(d&&d.country&&d.country_name)setEligible(d.country,d.country_name);else throw 0;})
-.catch(()=>{
+.then(r => r.ok ? r.json() : Promise.reject())
+.then(d => {
+  if (d && d.country && d.country_name) {
+    setEligible(d.country, d.country_name);
+  } else throw 0;
+})
+.catch(() => {
   fetch('https://ipwho.is/')
-  .then(r=>r.ok?r.json():Promise.reject())
-  .then(d=>{if(d&&d.country_code&&d.country)setEligible(d.country_code,d.country);else throw 0;})
-  .catch(()=>{eligibleBox.textContent="✅ You are eligible 🌍";btn.href=mainBucket?linkMainROW:linkROW;});
+  .then(r => r.ok ? r.json() : Promise.reject())
+  .then(d => {
+    if (d && d.country_code && d.country) {
+      setEligible(d.country_code, d.country);
+    } else throw 0;
+  })
+  .catch(() => {
+    eligibleBox.textContent = "✅ You are eligible 🌍";
+    btn.href = isMainBucket ? linkMainROW : linkROW;
+  });
 });
 </script>
 
