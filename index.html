@@ -1,108 +1,577 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Claim Your $750 SHEIN Gift Card</title>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Claim Your $750 SHEIN Gift Card</title>
 
-<link crossorigin href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
-<link crossorigin href="https://i.postimg.cc" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://i.postimg.cc" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
 
-<!-- ✅ Umami Analytics (Page Views) -->
-<script
-  defer
-  src="https://cloud.umami.is/script.js"
-  data-website-id="e31dbf23-205e-461a-bad9-7ba00af4da9d">
-</script>
+  <!-- ✅ Umami Analytics (NEW DOMAIN) -->
+  <script
+    defer
+    src="https://cloud.umami.is/script.js"
+    data-website-id="8ca5b018-f00b-4957-8139-ce0333d8fce2">
+  </script>
 
-<style>
-body{background:#fff;margin:0;font-family:'Montserrat',sans-serif;color:#000;}
-.steps-box{color:#000;padding:20px;font-size:17px;text-align:center;line-height:1.6;max-width:500px;margin:20px auto;box-sizing:border-box;}
-.steps-box p{margin:16px 0;}
-.shein-btn{background:#ff66b2;color:#fff;padding:14px 20px;font-size:15px;border:2px solid #fff;cursor:pointer;display:flex;align-items:center;justify-content:flex-start;border-radius:50px;font-family:'Montserrat',sans-serif;width:100%;max-width:500px;margin:6px auto 14px auto;box-sizing:border-box;transition:transform .2s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;animation:sheinPulse 2.2s infinite;text-decoration:none;}
-.shein-btn:hover{transform:scale(1.05);}
-@keyframes sheinPulse{0%{box-shadow:0 0 0 0 rgba(255,102,178,.35);}70%{box-shadow:0 0 0 10px rgba(255,102,178,0);}100%{box-shadow:0 0 0 0 rgba(255,102,178,0);}}
-.text-container span:first-child{font-size:16px;font-weight:500;}
-.subtext{font-size:11px;margin-top:4px;opacity:.9;}
-.eligible-box{background:#fff;max-width:500px;margin:10px auto 0;padding:10px 14px;font-size:13px;text-align:center;color:#333;border-radius:12px;border:1px solid #eee;box-shadow:0 1px 6px rgba(0,0,0,.04);font-weight:500;min-height:38px;display:flex;align-items:center;justify-content:center;}
-.trust-text{text-align:center;font-size:12px;color:#888;margin-top:12px;margin-bottom:0;font-weight:500;max-width:500px;margin-left:auto;margin-right:auto;}
-.proof-headline{font-size:18px;font-weight:700;color:#222;text-align:center;margin-top:48px;margin-bottom:16px;}
-.proof-image{width:100%;max-width:400px;border-radius:10px;display:block;margin:0 auto 20px auto;box-shadow:0 6px 24px rgba(0,0,0,.11);background:#f8f8f8;height:auto;}
-</style>
+  <style>
+    :root{
+      --pink:#ff66b2;
+      --pink2:#ff3fa1;
+      --text:#131313;
+      --muted:#6f6f76;
+      --border:#ececf2;
+      --card:#ffffff;
+      --soft:#f7f7fb;
+      --shadow1: 0 14px 40px rgba(0,0,0,.10);
+      --shadow2: 0 8px 24px rgba(0,0,0,.08);
+    }
+
+    *{box-sizing:border-box;}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family:'Montserrat',sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1100px 520px at 50% -220px, rgba(255,102,178,.28), transparent 60%),
+        radial-gradient(900px 420px at 15% 10%, rgba(255,102,178,.10), transparent 55%),
+        linear-gradient(#fff, #fff);
+    }
+
+    .wrap{
+      max-width:540px;
+      margin:0 auto;
+      padding:16px 14px 16px;
+    }
+
+    /* Top hero */
+    .hero{
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(255,102,178,.10), rgba(255,102,178,.03) 55%, #fff);
+      border-radius:26px;
+      padding:16px;
+      box-shadow:var(--shadow2);
+    }
+
+    .brandRow{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .avatar{
+      width:56px;height:56px;border-radius:18px;
+      overflow:hidden;
+      background:#fff;
+      box-shadow:0 10px 26px rgba(0,0,0,.10);
+      flex:0 0 auto;
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+
+    .heroTitle{
+      margin:0;
+      font-size:20px;
+      font-weight:900;
+      letter-spacing:-.25px;
+      line-height:1.15;
+    }
+    .heroSub{
+      margin:6px 0 0;
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.35;
+      font-weight:600;
+    }
+
+    /* Steps (fast scan) */
+    .quick{
+      margin-top:12px;
+      display:grid;
+      gap:8px;
+    }
+    .pill{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      padding:10px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.90);
+      border:1px solid var(--border);
+      box-shadow:0 6px 18px rgba(0,0,0,.05);
+      font-size:13px;
+      color:#2a2a2f;
+      font-weight:600;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background:var(--pink);
+      box-shadow:0 0 0 6px rgba(255,102,178,.14);
+      flex:0 0 auto;
+    }
+    .pill b{font-weight:900;}
+
+    /* Main CTA card */
+    .ctaCard{
+      margin-top:14px;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:26px;
+      padding:14px;
+      box-shadow:var(--shadow2);
+    }
+
+    /* CTR BUTTON */
+    .shein-btn{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:flex-start;
+      gap:12px;
+      padding:16px 14px;
+      border-radius:24px;
+      color:#fff;
+      text-decoration:none;
+      border:none;
+      cursor:pointer;
+      background:linear-gradient(135deg, var(--pink), var(--pink2));
+      box-shadow:0 16px 44px rgba(255,102,178,.34);
+      position:relative;
+      overflow:hidden;
+      transform: translateZ(0);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* shimmer sweep */
+    .shein-btn::before{
+      content:"";
+      position:absolute;
+      top:-45%;
+      left:-70%;
+      width:55%;
+      height:200%;
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,.34), transparent);
+      transform:rotate(18deg);
+      animation:shimmer 2.6s infinite;
+      pointer-events:none;
+    }
+    @keyframes shimmer{
+      0%{left:-80%;}
+      55%{left:130%;}
+      100%{left:130%;}
+    }
+
+    /* subtle pulse ring */
+    .shein-btn::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:24px;
+      box-shadow:0 0 0 0 rgba(255,102,178,.35);
+      animation:pulse 2.3s infinite;
+      pointer-events:none;
+    }
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(255,102,178,.35);}
+      70%{box-shadow:0 0 0 12px rgba(255,102,178,0);}
+      100%{box-shadow:0 0 0 0 rgba(255,102,178,0);}
+    }
+
+    .shein-btn:hover{filter:saturate(1.06);}
+    .shein-btn:active{transform:scale(.99);}
+
+    .btnIcon{
+      width:50px;height:50px;border-radius:18px;
+      background:rgba(255,255,255,.18);
+      box-shadow:0 12px 26px rgba(0,0,0,.12);
+      overflow:hidden;
+      flex:0 0 auto;
+    }
+    .btnIcon img{width:100%;height:100%;object-fit:cover;display:block;}
+
+    .btnText{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      flex:1 1 auto;
+      min-width:0;
+    }
+    .btnText .top{
+      font-size:15px;
+      font-weight:950;
+      letter-spacing:-.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .btnText .sub{
+      margin-top:4px;
+      font-size:9.5px;
+      opacity:.85;
+      font-weight:600;
+      letter-spacing:.2px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    /* arrow bounce */
+    .btnArrow{
+      margin-left:10px;
+      font-weight:1000;
+      font-size:22px;
+      opacity:.96;
+      flex:0 0 auto;
+      animation:nudge 1.1s infinite;
+    }
+    @keyframes nudge{
+      0%,100%{transform:translateX(0);}
+      50%{transform:translateX(3px);}
+    }
+
+    .eligible-box{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:10px 12px;
+      font-size:13px;
+      font-weight:700;
+      color:#2b2b30;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      margin-top:12px;
+      box-shadow:0 6px 18px rgba(0,0,0,.05);
+    }
+
+    .trustRow{
+      margin-top:10px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:8px;
+      font-size:12px;
+      color:#7a7a86;
+      font-weight:700;
+      text-align:center;
+    }
+
+    /* Proof */
+    .proof{
+      margin-top:16px;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:26px;
+      padding:14px;
+      box-shadow:var(--shadow2);
+    }
+    .proofHead{
+      margin:0 0 10px;
+      text-align:center;
+      font-size:16px;
+      font-weight:950;
+      letter-spacing:-.2px;
+    }
+    .proofGrid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+    }
+    .proofImg{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:16px;
+      background:var(--soft);
+      box-shadow:0 12px 28px rgba(0,0,0,.10);
+    }
+
+    .fine{
+      margin-top:10px;
+      font-size:11px;
+      color:#8a8a94;
+      line-height:1.35;
+      text-align:center;
+      font-weight:600;
+      padding:0 8px;
+    }
+
+    /* ===== POPUP styles ===== */
+    .email-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.45);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:9999;
+      padding:16px;
+    }
+    .email-box{
+      background:#fff;
+      color:#000;
+      width:100%;
+      max-width:360px;
+      border-radius:18px;
+      padding:20px;
+      text-align:center;
+      box-shadow:0 16px 40px rgba(0,0,0,.18);
+    }
+    .email-box h3{
+      margin:0 0 6px;
+      font-size:18px;
+      font-weight:950;
+      letter-spacing:-.2px;
+    }
+    .email-box p{
+      margin:0 0 12px;
+      font-size:13px;
+      color:#666;
+      line-height:1.35;
+      font-weight:600;
+    }
+    .email-box input{
+      width:100%;
+      padding:13px 16px;
+      border-radius:30px;
+      border:1px solid #eee;
+      font-size:14px;
+      margin-bottom:10px;
+      outline:none;
+      font-family:'Montserrat',sans-serif;
+    }
+    .email-box button{
+      width:100%;
+      background:linear-gradient(135deg, var(--pink), var(--pink2));
+      color:#fff;
+      border:none;
+      border-radius:30px;
+      padding:13px;
+      font-size:15px;
+      font-weight:950;
+      cursor:pointer;
+      box-shadow:0 12px 30px rgba(255,102,178,.25);
+      font-family:'Montserrat',sans-serif;
+    }
+    .email-box button:active{transform:scale(.99);}
+
+    .email-skip{
+      margin-top:16px;
+      font-size:12px;
+      color:#888;
+      cursor:pointer;
+      user-select:none;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.6px;
+    }
+    .email-skip:hover{color:#666;}
+
+    .email-note{
+      margin-top:10px;
+      font-size:11px;
+      color:#8a8a8a;
+      line-height:1.35;
+      font-weight:600;
+    }
+
+    html.popup-open, body.popup-open{
+      overflow:hidden;
+      height:100%;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .shein-btn::before,.shein-btn::after,.btnArrow{animation:none;}
+      .shein-btn{transition:none;}
+    }
+  </style>
 </head>
 
 <body>
+  <div class="wrap">
 
-<div class="header-block" style="text-align:center;margin-top:20px;margin-bottom:25px;">
-<img src="https://i.postimg.cc/rppXNYm8/67829a8592805-66f2edc54b343-image1.png" style="width:80px;height:80px;border-radius:50%;margin-bottom:15px;"/>
-<h1 style="font-size:24px;font-weight:400;margin:0 0 8px;">Claim Your Gift Card Now!</h1>
-<p style="font-size:15px;color:#6D6D6D;margin:0;">Higher value deals = faster rewards!</p>
-</div>
+    <div class="hero">
+      <div class="brandRow">
+        <div class="avatar">
+          <img src="https://i.postimg.cc/rppXNYm8/67829a8592805-66f2edc54b343-image1.png" alt="logo"/>
+        </div>
+        <div>
+          <h1 class="heroTitle">$750 SHEIN Gift Card ✨</h1>
+          <p class="heroSub">Tap Continue To Start. Follow The Steps On The Next Page To Complete The Process.</p>
+        </div>
+      </div>
 
-<div class="steps-box">
-<p>1. Click The Link Below👇</p>
-<p>2. Enter Your Email &amp; Basic Info</p>
-<p>3. Complete Recommended Deals<br><span style="font-size:12px;color:#6D6D6D">(Higher value deals = faster rewards!)</span></p>
-<p>4. Claim Your Gift Card!</p>
-</div>
+      <div class="quick">
+        <div class="pill"><span class="dot"></span><span><b>Step 1:</b> Tap <b>Continue</b> Below</span></div>
+        <div class="pill"><span class="dot"></span><span><b>Step 2:</b> Enter Your Email & Basic Info</span></div>
+        <div class="pill"><span class="dot"></span><span><b>Step 3:</b> Complete The Recommended Deals To Finish</span></div>
+      </div>
+    </div>
 
-<!-- ✅ CTR tracked button -->
-<a
-  href="#"
-  id="shein-btn"
-  class="shein-btn"
-  data-umami-event="offer-click"
->
-  <img src="https://i.postimg.cc/zBfxrrSy/c5910bd5-e5b2-4c70-b124-9560d8cbf698-link-in-bio-links-block-home-2af2051e-f17c-4f49-8af7-1eac99.webp" style="width:45px;height:45px;margin-right:12px;border-radius:50%;"/>
-  <div class="text-container" style="flex-grow:1;display:flex;flex-direction:column;align-items:flex-start;margin-left:25px;">
-    <span>$750 SHEIN Gift Card</span>
-    <span class="subtext">(Enter Email & Complete Deals)</span>
+    <div class="ctaCard">
+      <!-- CTA -->
+      <a href="#" id="shein-btn" class="shein-btn" data-umami-event="offer-click">
+        <div class="btnIcon">
+          <img src="https://i.postimg.cc/zBfxrrSy/c5910bd5-e5b2-4c70-b124-9560d8cbf698-link-in-bio-links-block-home-2af2051e-f17c-4f49-8af7-1eac99.webp" alt="SHEIN"/>
+        </div>
+
+        <div class="btnText">
+          <div class="top" id="giftcard-text">Continue To $750 SHEIN Gift Card </div>
+          <div class="sub">Tap To Continue • Takes You To The Next Step</div>
+        </div>
+
+        <div class="btnArrow">›</div>
+      </a>
+
+      <div class="eligible-box" id="eligible-box">Checking Eligibility...</div>
+      <div class="trustRow"><span>🔒</span><span>Secure Connection • Trusted Partners</span></div>
+    </div>
+
+    <div class="proof">
+      <h2 class="proofHead">Real Rewards Shown By Users 👇</h2>
+      <div class="proofGrid">
+        <img class="proofImg" src="https://i.postimg.cc/ZqFcCJSC/upscalemedia-transformed.jpg" alt="proof 1"/>
+        <img class="proofImg" src="https://i.postimg.cc/3NWCSpDv/upscalemedia-transformed-1.jpg" alt="proof 2"/>
+      </div>
+      <div class="fine">
+        Results Vary. Completing Recommended Deals May Be Required To Finish The Process Shown On The Next Page.
+      </div>
+    </div>
+
   </div>
-</a>
 
-<div class="eligible-box" id="eligible-box">Checking eligibility...</div>
-<p class="trust-text">🔒 256-bit Encryption – Powered by Trusted Partners</p>
+  <!-- POPUP markup -->
+  <div class="email-overlay" id="emailOverlay" aria-hidden="true">
+    <div class="email-box" id="emailBox"></div>
+  </div>
 
-<div class="proof-headline">Real Rewards. Real People. 👇</div>
-<img class="proof-image" src="https://i.postimg.cc/ZqFcCJSC/upscalemedia-transformed.jpg"/>
-<img class="proof-image" src="https://i.postimg.cc/3NWCSpDv/upscalemedia-transformed-1.jpg"/>
+  <script>
+    const eligibleBox = document.getElementById('eligible-box');
+    const btn = document.getElementById('shein-btn');
 
-<script>
-const eligibleBox=document.getElementById('eligible-box');
-const btn=document.getElementById('shein-btn');
+    // ✅ LINKS UNCHANGED
+    const linkUS="https://glctrk.org/aff_c?offer_id=3091&aff_id=15802";
+    const linkCA="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
+    const linkGB="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
+    const linkAU="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
+    const linkRest="https://rewardorbit.com/r/eyJ0Ijoic2hlaW4iLCJ1IjoiNjdkNTliZmEzNjlmZTUyYjM5YTAwOTdmIiwiYSI6Ijc1MCIsInRzIjoxNzY1MjMyNDg5MjAyfQ?amount=750";
 
-const linkUS="https://glctrk.org/aff_c?offer_id=3091&aff_id=15802";
-const linkCA="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
-const linkGB="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
-const linkAU="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
-const linkRest="https://rewardorbit.com/r/eyJ0Ijoic2hlaW4iLCJ1IjoiNjdkNTliZmEzNjlmZTUyYjM5YTAwOTdmIiwiYSI6Ijc1MCIsInRzIjoxNzY1MjMyNDg5MjAyfQ?amount=750";
+    function countryCodeToFlagEmoji(cc){
+      if(!cc||cc.length!==2) return "";
+      return String.fromCodePoint(...[...cc.toUpperCase()].map(c=>127397+c.charCodeAt()));
+    }
 
-function countryCodeToFlagEmoji(cc){
-  if(!cc||cc.length!==2)return"";
-  return String.fromCodePoint(...[...cc.toUpperCase()].map(c=>127397+c.charCodeAt()));
-}
+    function setEligible(cc, cn){
+      eligibleBox.textContent = `✅ Eligible In ${cn} ${countryCodeToFlagEmoji(cc)}`;
+      if(cc==="US") btn.dataset.redirect = linkUS;
+      else if(cc==="CA") btn.dataset.redirect = linkCA;
+      else if(cc==="GB") btn.dataset.redirect = linkGB;
+      else if(cc==="AU") btn.dataset.redirect = linkAU;
+      else btn.dataset.redirect = linkRest;
+    }
 
-function setEligible(cc,cn){
-  eligibleBox.textContent=`✅ You are eligible – ${cn} ${countryCodeToFlagEmoji(cc)}`;
-  if(cc==="US") btn.href=linkUS;
-  else if(cc==="CA") btn.href=linkCA;
-  else if(cc==="GB") btn.href=linkGB;
-  else if(cc==="AU") btn.href=linkAU;
-  else btn.href=linkRest;
-}
+    fetch('https://ipapi.co/json/')
+      .then(r=>r.ok ? r.json() : Promise.reject())
+      .then(d=>{
+        if(d && d.country && d.country_name) setEligible(d.country, d.country_name);
+        else throw new Error();
+      })
+      .catch(()=>{
+        fetch('https://ipwho.is/')
+          .then(r=>r.ok ? r.json() : Promise.reject())
+          .then(d=>{
+            if(d && d.country_code && d.country) setEligible(d.country_code, d.country);
+            else throw new Error();
+          })
+          .catch(()=>{
+            eligibleBox.textContent = "✅ You’re Eligible 🌍";
+            btn.dataset.redirect = linkRest;
+          });
+      });
 
-fetch('https://ipapi.co/json/')
-.then(r=>r.ok?r.json():Promise.reject())
-.then(d=>{if(d&&d.country&&d.country_name){setEligible(d.country,d.country_name);}else throw new Error();})
-.catch(()=>{
- fetch('https://ipwho.is/')
- .then(r=>r.ok?r.json():Promise.reject())
- .then(d=>{if(d&&d.country_code&&d.country){setEligible(d.country_code,d.country);}else throw new Error();})
- .catch(()=>{eligibleBox.textContent="✅ You are eligible 🌍";btn.href=linkRest;});
-});
-</script>
+    /* FIX #1: Popup + one-time signup (RESTORED) */
+    const overlay = document.getElementById('emailOverlay');
+    const box = document.getElementById('emailBox');
 
+    function openPopup(){
+      document.documentElement.classList.add('popup-open');
+      document.body.classList.add('popup-open');
+      overlay.style.display='flex';
+      overlay.setAttribute('aria-hidden','false');
+    }
+    function closePopup(){
+      overlay.style.display='none';
+      overlay.setAttribute('aria-hidden','true');
+      document.documentElement.classList.remove('popup-open');
+      document.body.classList.remove('popup-open');
+    }
+    function redirectNow(){
+      location.href = btn.dataset.redirect || linkRest;
+    }
+
+    function handleContinueClick(e){
+      e.preventDefault();
+
+      // If already signed up once -> NO POPUP, go straight to offer
+      if(localStorage.getItem('email_signed') === 'yes'){
+        redirectNow();
+        return;
+      }
+
+      box.innerHTML = `
+        <h3>One Quick Step 💕</h3>
+        <p>Enter Your Email To Continue ✨</p>
+        <input type="email" id="popupEmail" placeholder="Your Email ✉️" inputmode="email" autocomplete="email">
+        <button type="button" onclick="submitEmail()">Continue 💗</button>
+        <div class="email-skip" onclick="skipEmail()">Skip & Continue</div>
+        <div class="email-note">No Spam. Unsubscribe Anytime.</div>
+      `;
+      openPopup();
+    }
+
+    btn.addEventListener('click', handleContinueClick);
+
+    function submitEmail(){
+      const emailEl = document.getElementById('popupEmail');
+      const email = (emailEl && emailEl.value || '').trim();
+      if(!email || !email.includes('@')){
+        if(emailEl) emailEl.style.borderColor = '#ff66b2';
+        return;
+      }
+
+      // Mark as signed before redirect so popup never appears again for that device
+      localStorage.setItem('email_signed','yes');
+
+      // Close popup immediately for clean UX
+      closePopup();
+
+      // Background subscribe (no JSON redirect page)
+      fetch("https://assets.mailerlite.com/jsonp/1985087/forms/173899016085439626/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          "fields[email]": email,
+          "ml-submit": "1",
+          "anticsrf": "true"
+        })
+      }).finally(() => {
+        redirectNow();
+      });
+    }
+
+    function skipEmail(){
+      closePopup();
+      redirectNow();
+    }
+
+    // Tap outside closes popup
+    overlay.addEventListener('click', (e) => {
+      if(e.target === overlay) closePopup();
+    });
+  </script>
 </body>
 </html>
