@@ -18,22 +18,43 @@
 body{background:#fff;margin:0;font-family:'Montserrat',sans-serif;color:#000;}
 .steps-box{color:#000;padding:20px;font-size:17px;text-align:center;line-height:1.6;max-width:500px;margin:20px auto;box-sizing:border-box;}
 .steps-box p{margin:16px 0;}
-.shein-btn{background:#ff66b2;color:#fff;padding:14px 20px;font-size:15px;border:2px solid #fff;cursor:pointer;display:flex;align-items:center;justify-content:flex-start;border-radius:50px;font-family:'Montserrat',sans-serif;width:100%;max-width:500px;margin:6px auto 14px auto;box-sizing:border-box;transition:transform .2s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;animation:sheinPulse 2.2s infinite;text-decoration:none;}
-.shein-btn:hover{transform:scale(1.05);}
-@keyframes sheinPulse{0%{box-shadow:0 0 0 0 rgba(255,102,178,.35);}70%{box-shadow:0 0 0 10px rgba(255,102,178,0);}100%{box-shadow:0 0 0 0 rgba(255,102,178,0);}}
-.text-container span:first-child{font-size:16px;font-weight:500;}
+.shein-btn{
+  background:#ff66b2;
+  color:#fff;
+  padding:20px 24px; /* taller + more horizontal space */
+  font-size:16px;
+  border:4px solid #fff; /* thick white border for stronger "button" feel */
+  border-radius:50px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  font-family:'Montserrat',sans-serif;
+  width:calc(100% - 28px);
+  max-width:500px;
+  margin:12px auto 20px auto;
+  box-sizing:border-box;
+  transition:transform .2s, box-shadow .2s;
+  animation:sheinPulse 2.2s infinite;
+  text-decoration:none;
+  box-shadow:0 8px 30px rgba(255,102,178,.4); /* extra shadow for depth */
+}
+.shein-btn:hover{transform:scale(1.03);}
+.shein-btn:active{transform:scale(.98);}
+@keyframes sheinPulse{0%{box-shadow:0 8px 30px rgba(255,102,178,.4);}50%{box-shadow:0 12px 40px rgba(255,102,178,.5);}100%{box-shadow:0 8px 30px rgba(255,102,178,.4);}}
+.text-container span:first-child{font-size:19px;font-weight:600;} /* main text +1px larger */
 .subtext{font-size:11px;margin-top:4px;opacity:.9;}
-.eligible-box{background:#fff;max-width:500px;margin:10px auto 0;padding:10px 14px;font-size:13px;text-align:center;color:#333;border-radius:12px;border:1px solid #eee;box-shadow:0 1px 6px rgba(0,0,0,.04);font-weight:500;min-height:38px;display:flex;align-items:center;justify-content:center;}
-.trust-text{text-align:center;font-size:12px;color:#888;margin-top:12px;margin-bottom:0;font-weight:500;max-width:500px;margin-left:auto;margin-right:auto;}
+.eligible-box{background:#fff;max-width:480px;margin:12px auto 0;padding:12px 16px;font-size:13.5px;text-align:center;color:#333;border-radius:14px;border:1px solid #eee;box-shadow:0 1px 6px rgba(0,0,0,.04);font-weight:500;min-height:42px;display:flex;align-items:center;justify-content:center;}
+.trust-text{text-align:center;font-size:12px;color:#888;margin-top:12px;margin-bottom:0;font-weight:500;max-width:480px;margin-left:auto;margin-right:auto;}
 .proof-headline{font-size:18px;font-weight:700;color:#222;text-align:center;margin-top:48px;margin-bottom:16px;}
-.proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:500px;margin:0 auto;}
-.proof-image{width:100%;border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,.11);background:#f8f8f8;aspect-ratio:9/16;object-fit:cover;}
+.proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:480px;margin:0 auto 20px auto;}
+.proof-image{width:100%;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,.11);background:#f8f8f8;aspect-ratio:9/16;object-fit:cover;}
+.header-logo{width:92px;height:92px;border-radius:50%;margin-bottom:18px;}
 </style>
 </head>
 <body>
 <div class="header-block" style="text-align:center;margin-top:20px;margin-bottom:25px;">
-  <img src="https://i.postimg.cc/rppXNYm8/67829a8592805-66f2edc54b343-image1.png"
-       style="width:80px;height:80px;border-radius:50%;margin-bottom:15px;" />
+  <img class="header-logo" src="https://i.postimg.cc/zBfxrrSy/c5910bd5-e5b2-4c70-b124-9560d8cbf698-link-in-bio-links-block-home-2af2051e-f17c-4f49-8af7-1eac99.webp" alt="SHEIN"/>
   <h1 style="font-size:24px;font-weight:400;margin:0 0 8px;">Claim Your Gift Card Now!</h1>
 </div>
 <div class="steps-box">
@@ -50,10 +71,10 @@ body{background:#fff;margin:0;font-family:'Montserrat',sans-serif;color:#000;}
   data-umami-event="offer-click"
 >
   <img src="https://i.postimg.cc/zBfxrrSy/c5910bd5-e5b2-4c70-b124-9560d8cbf698-link-in-bio-links-block-home-2af2051e-f17c-4f49-8af7-1eac99.webp"
-       style="width:45px;height:45px;margin-right:12px;border-radius:50%;" />
-  <div class="text-container" style="flex-grow:1;display:flex;flex-direction:column;align-items:flex-start;margin-left:25px;">
+       style="width:48px;height:48px;margin-right:16px;border-radius:50%;flex-shrink:0;" />
+  <div class="text-container" style="flex-grow:1;display:flex;flex-direction:column;align-items:flex-start;">
     <span id="giftcard-text">$750 SHEIN Gift Card</span>
-    <span class="subtext">Quick email step + complete deals</span>
+    <span class="subtext">(Quick Email Step + Complete Deals)</span>
   </div>
 </a>
 <div class="eligible-box" id="eligible-box">Checking eligibility...</div>
