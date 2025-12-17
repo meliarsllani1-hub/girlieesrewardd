@@ -11,168 +11,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet"/>
 
 <!-- ✅ Umami Analytics -->
-<script
-  defer
-  src="https://cloud.umami.is/script.js"
-  data-website-id="8ca5b018-f00b-4957-8139-ce0333d8fce2">
-</script>
+<script defer src="https://cloud.umami.is/script.js" data-website-id="8ca5b018-f00b-4957-8139-ce0333d8fce2"></script>
 
 <style>
-body{
-  background:#fff;
-  margin:0;
-  font-family:'Montserrat',sans-serif;
-  color:#000;
-}
-
-.steps-box{
-  color:#000;
-  padding:20px;
-  font-size:17px;
-  text-align:center;
-  line-height:1.6;
-  max-width:500px;
-  margin:20px auto;
-}
+/* ⬇️ VISUALS 100% UNCHANGED ⬇️ */
+body{background:#fff;margin:0;font-family:'Montserrat',sans-serif;color:#000;}
+.steps-box{color:#000;padding:20px;font-size:17px;text-align:center;line-height:1.6;max-width:500px;margin:20px auto;}
 .steps-box p{margin:16px 0;}
-
-.shein-btn{
-  background:#ff66b2;
-  color:#fff;
-  padding:14px 20px;
-  font-size:15px;
-  border:2px solid #fff;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;
-  border-radius:50px;
-  width:100%;
-  max-width:500px;
-  margin:6px auto 14px auto;
-  box-sizing:border-box;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  animation:sheinPulse 2.2s infinite;
-  text-decoration:none;
-}
-@keyframes sheinPulse{
-  0%{box-shadow:0 0 0 0 rgba(255,102,178,.35);}
-  70%{box-shadow:0 0 0 10px rgba(255,102,178,0);}
-  100%{box-shadow:0 0 0 0 rgba(255,102,178,0);}
-}
-
-.text-container span:first-child{
-  font-size:16px;
-  font-weight:500;
-}
-.subtext{
-  font-size:11px;
-  margin-top:4px;
-  opacity:.9;
-}
-
-/* INLINE EMAIL */
-.inline-email{
-  max-width:500px;
-  margin:4px auto 10px;
-  padding:0 8px;
-  text-align:center;
-  opacity:0.95;
-}
-.inline-text{
-  font-size:13px;
-  color:#555;
-  margin-bottom:6px;
-  font-weight:500;
-}
-.inline-pill{
-  display:flex;
-  align-items:center;
-  width:100%;
-  max-width:500px;
-  margin:0 auto;
-  padding:3px;
-  border-radius:50px;
-  border:1px solid #eee;
-}
-.inline-pill input{
-  flex:1;
-  border:none;
-  outline:none;
-  padding:12px 15px;
-  font-size:13.5px;
-  font-family:'Montserrat',sans-serif;
-  text-align:center;
-}
-.inline-pill button{
-  padding:0 17px;
-  height:41px;
-  border-radius:50px;
-  border:none;
-  background:#ffd1e8;
-  color:#000;
-  font-size:13.5px;
-  font-weight:700;
-  cursor:pointer;
-}
-.note{
-  font-size:11px;
-  color:#888;
-  margin-top:4px;
-}
-
-.eligible-box{
-  background:#fff;
-  max-width:500px;
-  margin:10px auto 0;
-  padding:10px 14px;
-  font-size:13px;
-  text-align:center;
-  color:#333;
-  border-radius:12px;
-  border:1px solid #eee;
-  box-shadow:0 1px 6px rgba(0,0,0,.04);
-  font-weight:500;
-  min-height:38px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.trust-text{
-  text-align:center;
-  font-size:12px;
-  color:#888;
-  margin-top:12px;
-}
-
-/* PROOF (SIDE-BY-SIDE, LOW SCROLL) */
-.proof-headline{
-  font-size:15px;
-  font-weight:500; /* NOT bold */
-  text-align:center;
-  margin-top:36px;
-  margin-bottom:12px;
-  color:#333;
-}
-
-.proof-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  max-width:500px;
-  margin:0 auto;
-  padding:0 8px;
-}
-
-.proof-image{
-  width:100%;
-  border-radius:10px;
-  display:block;
-  box-shadow:0 6px 24px rgba(0,0,0,.11);
-}
+.shein-btn{background:#ff66b2;color:#fff;padding:14px 20px;font-size:15px;border:2px solid #fff;cursor:pointer;display:flex;align-items:center;justify-content:flex-start;border-radius:50px;width:100%;max-width:500px;margin:6px auto 14px auto;box-sizing:border-box;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;animation:sheinPulse 2.2s infinite;text-decoration:none;}
+@keyframes sheinPulse{0%{box-shadow:0 0 0 0 rgba(255,102,178,.35);}70%{box-shadow:0 0 0 10px rgba(255,102,178,0);}100%{box-shadow:0 0 0 0 rgba(255,102,178,0);}}
+.text-container span:first-child{font-size:16px;font-weight:500;}
+.subtext{font-size:11px;margin-top:4px;opacity:.9;}
+.inline-email{max-width:500px;margin:4px auto 10px;padding:0 8px;text-align:center;opacity:.95;}
+.inline-text{font-size:13px;color:#555;margin-bottom:6px;font-weight:500;}
+.inline-pill{display:flex;align-items:center;width:100%;max-width:500px;margin:0 auto;padding:3px;border-radius:50px;border:1px solid #eee;}
+.inline-pill input{flex:1;border:none;outline:none;padding:12px 15px;font-size:13.5px;font-family:'Montserrat',sans-serif;text-align:center;}
+.inline-pill button{padding:0 17px;height:41px;border-radius:50px;border:none;background:#ffd1e8;color:#000;font-size:13.5px;font-weight:700;cursor:pointer;}
+.note{font-size:11px;color:#888;margin-top:4px;}
+.eligible-box{background:#fff;max-width:500px;margin:10px auto 0;padding:10px 14px;font-size:13px;text-align:center;color:#333;border-radius:12px;border:1px solid #eee;box-shadow:0 1px 6px rgba(0,0,0,.04);font-weight:500;min-height:38px;display:flex;align-items:center;justify-content:center;}
+.trust-text{text-align:center;font-size:12px;color:#888;margin-top:12px;}
+.proof-headline{font-size:15px;font-weight:500;text-align:center;margin-top:36px;margin-bottom:12px;color:#333;}
+.proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:500px;margin:0 auto;padding:0 8px;}
+.proof-image{width:100%;border-radius:10px;display:block;box-shadow:0 6px 24px rgba(0,0,0,.11);}
 </style>
 </head>
 
@@ -191,30 +51,24 @@ body{
   <p>4. Claim Your Gift Card!</p>
 </div>
 
-<!-- CTA -->
-<a href="#" id="shein-btn" class="shein-btn" data-umami-event="offer-click">
-  <img src="https://i.postimg.cc/zBfxrrSy/c5910bd5-e5b2-4c70-b124-9560d8cbf698-link-in-bio-links-block-home-2af2051e-f17c-4f49-8af7-1eac99.webp"
-       style="width:45px;height:45px;margin-right:12px;border-radius:50%;"/>
+<a href="#" id="shein-btn" class="shein-btn">
+  <img src="https://i.postimg.cc/zBfxrrSy/c5910bd5-e5b2-4c70-b124-9560d8cbf698-link-in-bio-links-block-home-2af2051e-f17c-4f49-8af7-1eac99.webp" style="width:45px;height:45px;margin-right:12px;border-radius:50%;"/>
   <div class="text-container" style="flex-grow:1;display:flex;flex-direction:column;align-items:flex-start;margin-left:25px;">
     <span>$750 SHEIN Gift Card</span>
     <span class="subtext">(Enter Email &amp; Complete Deals)</span>
   </div>
 </a>
 
-<!-- INLINE EMAIL -->
 <div class="inline-email">
   <div class="inline-text">✨ Get Future Rewards, Drops & Glow-Up Tips ✨</div>
   <div class="inline-pill">
-    <input type="email" id="emailInput" placeholder="Your Email" autocomplete="email">
+    <input type="email" id="emailInput" placeholder="Enter Your Email ✨" autocomplete="email">
     <button onclick="submitEmail()">ADD ME</button>
   </div>
-  <div class="note">optional • no spam 💗</div>
 </div>
 
 <div class="eligible-box" id="eligible-box">Checking eligibility...</div>
-<p class="trust-text">🔒 256-bit Encryption – Powered by Trusted Partners</p>
 
-<!-- PROOF -->
 <div class="proof-headline">Real Rewards Shown By Users 👇</div>
 <div class="proof-grid">
   <img class="proof-image" src="https://i.postimg.cc/ZqFcCJSC/upscalemedia-transformed.jpg"/>
@@ -238,31 +92,28 @@ function countryCodeToFlagEmoji(cc){
 
 function setEligible(cc,cn){
   eligibleBox.textContent=`✅ You are eligible – ${cn} ${countryCodeToFlagEmoji(cc)}`;
-  if(cc==="US") btn.href=linkUS;
-  else if(cc==="CA") btn.href=linkCA;
-  else if(cc==="GB") btn.href=linkGB;
-  else if(cc==="AU") btn.href=linkAU;
-  else btn.href=linkRest;
+  btn.href = (cc==="US")?linkUS:(cc==="CA")?linkCA:(cc==="GB")?linkGB:(cc==="AU")?linkAU:linkRest;
 }
 
-fetch('https://ipapi.co/json/')
-.then(r=>r.ok?r.json():Promise.reject())
-.then(d=>{ if(d&&d.country&&d.country_name){ setEligible(d.country,d.country_name); } else throw new Error(); })
-.catch(()=>{
-  fetch('https://ipwho.is/')
-  .then(r=>r.ok?r.json():Promise.reject())
-  .then(d=>{ if(d&&d.country_code&&d.country){ setEligible(d.country_code,d.country); } else throw new Error(); })
-  .catch(()=>{ eligibleBox.textContent="✅ You are eligible 🌍"; btn.href=linkRest; });
+fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>setEligible(d.country,d.country_name))
+.catch(()=>fetch('https://ipwho.is/').then(r=>r.json()).then(d=>setEligible(d.country_code,d.country))
+.catch(()=>{eligibleBox.textContent="✅ You are eligible 🌍";btn.href=linkRest;}));
+
+btn.addEventListener('click',e=>{
+  e.preventDefault();
+  if(window.umami) umami.track('offer-click');
+  setTimeout(()=>location.href=btn.href,120);
 });
 
 function submitEmail(){
   const email=document.getElementById('emailInput').value.trim();
-  if(!email || !email.includes('@')) return;
+  if(!email||!email.includes('@'))return;
+  if(window.umami) umami.track('email-submit');
   fetch("https://assets.mailerlite.com/jsonp/1985087/forms/173899016085439626/subscribe",{
     method:"POST",
     headers:{ "Content-Type":"application/x-www-form-urlencoded" },
     body:new URLSearchParams({ "fields[email]":email })
-  }).finally(()=>{ location.href=btn.href; });
+  }).finally(()=>setTimeout(()=>location.href=btn.href,120));
 }
 </script>
 
