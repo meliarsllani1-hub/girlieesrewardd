@@ -6,7 +6,7 @@
     <title>Enter to Win a $750 SHEIN Gift Card!</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- ✅ Umami Analytics (kept from your original) -->
+    <!-- ✅ Umami Analytics -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="8ca5b018-f00b-4957-8139-ce0333d8fce2"></script>
     <style>
         body { margin: 0; font-family: 'Poppins', sans-serif; background: linear-gradient(to bottom, #fff0f5, #fce4ec); color: #333; text-align: center; }
@@ -34,10 +34,8 @@
         }
     </style>
 
-    <!-- Geo Logic (EXACTLY as in your original – unchanged, only moved to head for faster execution) -->
+    <!-- Fixed Geo Logic (links unchanged, now works reliably) -->
     <script>
-        const eligibleBox = document.getElementById('eligible-box');
-        const btn = document.getElementById('shein-btn');
         const linkUS = "https://glctrk.org/aff_c?offer_id=3091&aff_id=15802";
         const linkCA = "https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
         const linkGB = "https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
@@ -50,7 +48,10 @@
         }
 
         function setEligible(cc, cn) {
+            const eligibleBox = document.getElementById('eligible-box');
+            const btn = document.getElementById('shein-btn');
             if (eligibleBox) eligibleBox.textContent = `✅ You are eligible – ${cn} ${countryCodeToFlagEmoji(cc)}`;
+
             if (cc === "US") btn.href = linkUS;
             else if (cc === "CA") btn.href = linkCA;
             else if (cc === "GB") btn.href = linkGB;
@@ -66,8 +67,10 @@
                     .then(r => r.ok ? r.json() : Promise.reject())
                     .then(d => { if (d && d.country_code && d.country) { setEligible(d.country_code, d.country); } else throw new Error(); })
                     .catch(() => {
+                        const eligibleBox = document.getElementById('eligible-box');
+                        const btn = document.getElementById('shein-btn');
                         if (eligibleBox) eligibleBox.textContent = "✅ You are eligible 🌍";
-                        btn.href = linkRest;
+                        if (btn) btn.href = linkRest;
                     });
             });
     </script>
