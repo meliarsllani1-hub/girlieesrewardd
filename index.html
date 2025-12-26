@@ -21,7 +21,6 @@ body{background:#fff;margin:0;font-family:'Montserrat',sans-serif;color:#000;}
 .steps-box{color:#000;padding:20px;font-size:17px;text-align:center;line-height:1.6;max-width:500px;margin:20px auto;box-sizing:border-box;}
 .steps-box p{margin:16px 0;}
 
-/* --- button same size as your original --- */
 .shein-btn{
   background:#ff66b2;
   color:#fff;
@@ -48,11 +47,10 @@ body{background:#fff;margin:0;font-family:'Montserrat',sans-serif;color:#000;}
 .shein-btn:hover{transform:scale(1.05);}
 @keyframes sheinPulse{0%{box-shadow:0 0 0 0 rgba(255,102,178,.35);}70%{box-shadow:0 0 0 10px rgba(255,102,178,0);}100%{box-shadow:0 0 0 0 rgba(255,102,178,0);}}
 
-/* keep subtext */
 .text-container span:first-child{font-size:16px;font-weight:500;}
 .subtext{font-size:11px;margin-top:4px;opacity:.9;}
 
-/* small badge over button */
+/* country access line above button */
 #special-access{
   text-align:center;
   font-size:14px;
@@ -63,8 +61,6 @@ body{background:#fff;margin:0;font-family:'Montserrat',sans-serif;color:#000;}
   display:none;
 }
 
-/* trust + proof unchanged */
-.eligible-box{background:#fff;max-width:500px;margin:10px auto 0;padding:10px 14px;font-size:13px;text-align:center;color:#333;border-radius:12px;border:1px solid #eee;box-shadow:0 1px 6px rgba(0,0,0,.04);font-weight:500;min-height:38px;display:flex;align-items:center;justify-content:center;}
 .trust-text{text-align:center;font-size:12px;color:#888;margin-top:12px;margin-bottom:0;font-weight:500;max-width:500px;margin-left:auto;margin-right:auto;}
 .proof-headline{font-size:18px;font-weight:700;color:#222;text-align:center;margin-top:48px;margin-bottom:16px;}
 .proof-image{width:100%;max-width:400px;border-radius:10px;display:block;margin:0 auto 20px auto;box-shadow:0 6px 24px rgba(0,0,0,.11);background:#f8f8f8;height:auto;}
@@ -76,20 +72,20 @@ body{background:#fff;margin:0;font-family:'Montserrat',sans-serif;color:#000;}
 <div class="header-block" style="text-align:center;margin-top:20px;margin-bottom:25px;">
 <img src="https://i.postimg.cc/rppXNYm8/67829a8592805-66f2edc54b343-image1.png" style="width:80px;height:80px;border-radius:50%;margin-bottom:15px;"/>
 <h1 style="font-size:24px;font-weight:400;margin:0 0 8px;">Claim Your Gift Card Access</h1>
-<p style="font-size:15px;color:#6D6D6D;margin:0;"> </p><!-- empty because we removed value deals text -->
+<p style="font-size:15px;color:#6D6D6D;margin:0;"></p>
 </div>
 
 <div class="steps-box">
 <p>1. Tap Below👇</p>
 <p>2. Enter Your Email</p>
-<p>3. Complete Recommended Deals<br><span style="font-size:12px;color:#6D6D6D">(Faster rewards with higher value deals)</span></p>
+<p>3. Complete Recommended Deals<br><span style="font-size:12px;color:#6D6D6D">(Higher value deals = faster rewards!)</span></p>
 <p>4. Get Your Gift Card</p>
 </div>
 
-<!-- small badge BEFORE button -->
+<!-- country access line above button -->
 <div id="special-access"></div>
 
-<!-- CTA button same look -->
+<!-- CTA BUTTON -->
 <a
   href="#"
   id="shein-btn"
@@ -117,7 +113,9 @@ const linkUS="https://glctrk.org/aff_c?offer_id=3091&aff_id=15802";
 const linkCA="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
 const linkGB="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
 const linkAU="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
-const linkRest="https://rewardorbit.com/r/eyJ0Ijoic2hlaW4iLCJ1IjoiNjdkNTliZmEzNjlmZTUyYjM5YTAwOTdmIiwiYSI6InNwZWNpYWwiLCJ0cyI6MTc2NTIzMjQ4OTIwMn0";
+
+/* 🔧 FIXED — FULL correct REST link */
+const linkRest="https://rewardorbit.com/r/eyJ0Ijoic2hlaW4iLCJ1IjoiNjdkNTliZmEzNjlmZTUyYjM5YTAwOTdmIiwiYSI6Ijc1MCIsInRzIjoxNzY1MjMyNDg5MjAyfQ?amount=750";
 
 function showAccess(cc){
   const msg={
