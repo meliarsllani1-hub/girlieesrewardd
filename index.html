@@ -3,149 +3,187 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Claim Your Gift Card Access</title>
-
+<title>Claim Your $750 SHEIN Gift Card</title>
 <link crossorigin href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link crossorigin href="https://i.postimg.cc" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet"/>
 
-<!-- Umami Analytics -->
-<script
-  defer
-  src="https://cloud.umami.is/script.js"
-  data-website-id="8ca5b018-f00b-4957-8139-ce0333d8fce2">
-</script>
+<!-- Umami -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="8ca5b018-f00b-4957-8139-ce0333d8fce2"></script>
 
 <style>
 body{background:#fff;margin:0;font-family:'Montserrat',sans-serif;color:#000;}
-.steps-box{color:#000;padding:20px;font-size:17px;text-align:center;line-height:1.6;max-width:500px;margin:20px auto;box-sizing:border-box;}
-.steps-box p{margin:16px 0;}
 
+/* steps softened — not bold, not dark, readable, feels "lighter" */
+.steps-box{
+  color:#000;padding:20px;font-size:17px;text-align:center;line-height:1.65;
+  max-width:500px;margin:16px auto 6px auto;box-sizing:border-box;
+  font-weight:500;
+  letter-spacing:0.1px;
+}
+.steps-box p{margin:14px 0;}
+
+/* ⭐ BUTTON — final CTR build */
 .shein-btn{
   background:#ff66b2;
   color:#fff;
-  padding:14px 20px;
-  font-size:15px;
-  border:2px solid #fff;
+  padding:20px 28px;
+  font-size:16px;
   cursor:pointer;
   display:flex;
   align-items:center;
   justify-content:flex-start;
   border-radius:50px;
-  font-family:'Montserrat',sans-serif;
-  width:100%;
-  max-width:500px;
-  margin:6px auto 14px auto;
+  width:94%;
+  max-width:460px;
+  margin:14px auto 20px auto;
   box-sizing:border-box;
-  transition:transform .2s;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  animation:sheinPulse 2.2s infinite;
+  transition:transform .18s ease, box-shadow .25s ease;
   text-decoration:none;
+  border:4px solid #ffb3d6;
+  animation:sheinPulse 2.8s infinite ease-in-out;
+  box-shadow: inset 0 -2px 4px rgba(0,0,0,0.08);
 }
-.shein-btn:hover{transform:scale(1.05);}
-@keyframes sheinPulse{0%{box-shadow:0 0 0 0 rgba(255,102,178,.35);}70%{box-shadow:0 0 0 10px rgba(255,102,178,0);}100%{box-shadow:0 0 0 0 rgba(255,102,178,0);}}
+.shein-btn:hover{
+  transform:scale(1.07);
+  box-shadow:0 10px 26px rgba(255,102,178,.35);
+}
+@keyframes sheinPulse{
+  0%,100%{box-shadow:0 0 0 rgba(255,102,178,0);}
+  50%{box-shadow:0 0 18px rgba(255,102,178,.35);}
+}
 
-.text-container span:first-child{font-size:16px;font-weight:500;}
+.btn-img{
+  width:46px;height:46px;border-radius:50%;margin-right:18px;
+}
+
+/* centers inner text without touching image */
+.text-container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  flex-grow:1;
+}
+.text-container span:first-child{
+  font-size:17px;
+  font-weight:600;
+}
 .subtext{font-size:11px;margin-top:4px;opacity:.9;}
 
-/* country access line above button */
-#special-access{
+/* 🌍 GEO — premium look, no emojis under */
+.geo-text{
+  font-size:15px;
+  font-weight:700;
+  text-transform:uppercase;
+  color:#ff66b2;
   text-align:center;
-  font-size:14px;
-  font-weight:600;
-  color:#ff4da6;
-  margin-top:10px;
-  margin-bottom:6px;
-  display:none;
+  max-width:500px;
+  margin:14px auto 4px auto;
+  letter-spacing:-0.1px;
 }
 
-.trust-text{text-align:center;font-size:12px;color:#888;margin-top:12px;margin-bottom:0;font-weight:500;max-width:500px;margin-left:auto;margin-right:auto;}
-.proof-headline{font-size:18px;font-weight:700;color:#222;text-align:center;margin-top:48px;margin-bottom:16px;}
-.proof-image{width:100%;max-width:400px;border-radius:10px;display:block;margin:0 auto 20px auto;box-shadow:0 6px 24px rgba(0,0,0,.11);background:#f8f8f8;height:auto;}
+/* trust + proofs */
+.trust-text{text-align:center;font-size:12px;color:#888;margin-top:10px;margin-bottom:0;font-weight:500;max-width:500px;margin-left:auto;margin-right:auto;}
+
+.proof-headline{font-size:18px;font-weight:700;color:#222;text-align:center;margin-top:40px;margin-bottom:16px;}
+
+/* 📸 proofs — balanced */
+.proof-row{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  max-width:500px;
+  margin:0 auto 40px auto;
+}
+.proof-row img{
+  width:47%;
+  max-width:210px;
+  border-radius:10px;
+  box-shadow:0 6px 24px rgba(0,0,0,.11);
+  object-fit:cover;
+  height:auto;
+}
+@media (max-width:420px){
+  .proof-row img{max-width:190px;}
+}
+@media (max-width:360px){
+  .proof-row{flex-direction:column;}
+  .proof-row img{width:100%;max-width:300px;}
+}
 </style>
 </head>
 
 <body>
 
-<div class="header-block" style="text-align:center;margin-top:20px;margin-bottom:25px;">
-<img src="https://i.postimg.cc/rppXNYm8/67829a8592805-66f2edc54b343-image1.png" style="width:80px;height:80px;border-radius:50%;margin-bottom:15px;"/>
-<h1 style="font-size:24px;font-weight:400;margin:0 0 8px;">Claim Your Gift Card Access</h1>
-<p style="font-size:15px;color:#6D6D6D;margin:0;"></p>
+<!-- HEADER -->
+<div class="header-block" style="text-align:center;margin-top:20px;margin-bottom:10px;">
+  <img src="https://i.postimg.cc/rppXNYm8/67829a8592805-66f2edc54b343-image1.png" style="width:80px;height:80px;border-radius:50%;margin-bottom:14px;"/>
+  <h1 style="font-size:24px;font-weight:400;margin:0 0 2px;">Claim Your Gift Card Now!</h1>
 </div>
 
+<!-- STEPS w/ EPC wording -->
 <div class="steps-box">
-<p>1. Tap Below👇</p>
-<p>2. Enter Your Email</p>
-<p>3. Complete Recommended Deals<br><span style="font-size:12px;color:#6D6D6D">(Higher value deals = faster rewards!)</span></p>
-<p>4. Get Your Gift Card</p>
+  <p>1. Click The Button Below 👇</p>
+  <p>2. Enter Your Details</p>
+  <p>3. Complete The Steps Shown<br>
+    <span style="font-size:13px;color:#6D6D6D">(Higher Value Deals = Faster Rewards!)</span>
+  </p>
+  <p>4. Unlock Your Reward</p>
 </div>
 
-<!-- country access line above button -->
-<div id="special-access"></div>
+<!-- GEO -->
+<div id="geoLine" class="geo-text">CHECKING ELIGIBILITY…</div>
 
-<!-- CTA BUTTON -->
-<a
-  href="#"
-  id="shein-btn"
-  class="shein-btn"
-  data-umami-event="offer-click"
->
-  <img src="https://i.postimg.cc/zBfxrrSy/c5910bd5-e5b2-4c70-b124-9560d8cbf698-link-in-bio-links-block-home-2af2051e-f17c-4f49-8af7-1eac99.webp" style="width:45px;height:45px;margin-right:12px;border-radius:50%;"/>
-  <div class="text-container" style="flex-grow:1;display:flex;flex-direction:column;align-items:flex-start;margin-left:25px;">
-    <span id="giftcard-text">Continue to SHEIN Gift Card</span>
-    <span class="subtext">(Enter Email & Complete Deals)</span>
+<!-- CTA -->
+<a href="#" id="shein-btn" class="shein-btn" data-umami-event="offer-click">
+  <img class="btn-img"
+       src="https://i.postimg.cc/zBfxrrSy/c5910bd5-e5b2-4c70-b124-9560d8cbf698-link-in-bio-links-block-home-2af2051e-f17c-4f49-8af7-1eac99.webp"/>
+  <div class="text-container">
+    <span>Continue To SHEIN Gift Card</span>
+    <span class="subtext">(Enter Email &amp; Complete Deals)</span>
   </div>
 </a>
 
 <p class="trust-text">🔒 256-bit Encryption – Powered by Trusted Partners</p>
 
 <div class="proof-headline">Real Rewards. Real People. 👇</div>
-<img class="proof-image" src="https://i.postimg.cc/ZqFcCJSC/upscalemedia-transformed.jpg"/>
-<img class="proof-image" src="https://i.postimg.cc/3NWCSpDv/upscalemedia-transformed-1.jpg"/>
+<div class="proof-row">
+  <img src="https://i.postimg.cc/ZqFcCJSC/upscalemedia-transformed.jpg"/>
+  <img src="https://i.postimg.cc/3NWCSpDv/upscalemedia-transformed-1.jpg"/>
+</div>
 
+<!-- 🌍 GEO LOGIC with fallback -->
 <script>
-const accessLine=document.getElementById('special-access');
+const geoLine=document.getElementById('geoLine');
 const btn=document.getElementById('shein-btn');
 
 const linkUS="https://glctrk.org/aff_c?offer_id=3091&aff_id=15802";
 const linkCA="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
 const linkGB="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
 const linkAU="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
-
-/* 🔧 FIXED — FULL correct REST link */
 const linkRest="https://rewardorbit.com/r/eyJ0Ijoic2hlaW4iLCJ1IjoiNjdkNTliZmEzNjlmZTUyYjM5YTAwOTdmIiwiYSI6Ijc1MCIsInRzIjoxNzY1MjMyNDg5MjAyfQ?amount=750";
 
-function showAccess(cc){
-  const msg={
-    US:"🇺🇸 United States — special access unlocked today",
-    CA:"🇨🇦 Canada — special access unlocked today",
-    GB:"🇬🇧 United Kingdom — special access unlocked today",
-    AU:"🇦🇺 Australia — special access unlocked today",
-    default:"🌍 Special access unlocked today"
-  };
-  accessLine.textContent=msg[cc]||msg.default;
-  accessLine.style.display="block";
+function setGeo(cc){
+  cc=(cc||"").toUpperCase();
+  if(cc==="US"){geoLine.textContent="🇺🇸 UNITED STATES – SPECIAL ACCESS";btn.href=linkUS;}
+  else if(cc==="CA"){geoLine.textContent="🇨🇦 CANADA – SPECIAL ACCESS";btn.href=linkCA;}
+  else if(cc==="GB"){geoLine.textContent="🇬🇧 UNITED KINGDOM – SPECIAL ACCESS";btn.href=linkGB;}
+  else if(cc==="AU"){geoLine.textContent="🇦🇺 AUSTRALIA – SPECIAL ACCESS";btn.href=linkAU;}
+  else{geoLine.textContent="🌍 AVAILABLE WORLDWIDE";btn.href=linkRest;}
 }
 
-function setEligible(cc){
-  showAccess(cc);
-  if(cc==="US") btn.href=linkUS;
-  else if(cc==="CA") btn.href=linkCA;
-  else if(cc==="GB") btn.href=linkGB;
-  else if(cc==="AU") btn.href=linkAU;
-  else btn.href=linkRest;
-}
-
-fetch('https://ipapi.co/json/')
-.then(r=>r.ok?r.json():Promise.reject())
-.then(d=>{if(d&&d.country){setEligible(d.country);}else throw new Error();})
-.catch(()=>{fetch('https://ipwho.is/')
- .then(r=>r.ok?r.json():Promise.reject())
- .then(d=>{if(d&&d.country_code){setEligible(d.country_code);}else throw new Error();})
- .catch(()=>{setEligible('default');});
-});
+fetch("https://ipapi.co/json/")
+  .then(r=>r.ok?r.json():Promise.reject())
+  .then(d=>setGeo(d.country))
+  .catch(()=>{
+    fetch("https://ipwho.is/")
+      .then(r=>r.ok?r.json():Promise.reject())
+      .then(d=>setGeo(d.country_code))
+      .catch(()=>setGeo());
+  });
 </script>
 
 </body>
