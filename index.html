@@ -4,6 +4,10 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Claim Your $750 SHEIN Gift Card</title>
+
+<!-- UMAMI ADDED -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="8ca5b018-f00b-4957-8139-ce0333d8fce2"></script>
+
 <link crossorigin href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
 <link crossorigin href="https://i.postimg.cc" rel="preconnect"/>
@@ -87,6 +91,13 @@ fetch('https://ipapi.co/json/')
  .then(r=>r.ok?r.json():Promise.reject())
  .then(d=>{if(d&&d.country_code&&d.country){setEligible(d.country_code,d.country);}else throw new Error();})
  .catch(()=>{eligibleBox.textContent="✅ You are eligible 🌍";btn.href=linkRest;});
+});
+
+/* ---- UMAMI OFFER CLICK TRACKING ADDED ---- */
+btn.addEventListener('click', () => {
+  try {
+    umami.track('SHEIN Offer Click'); 
+  } catch(e) {}
 });
 </script>
 
