@@ -2,15 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Claim Your $750 SHEIN Gift Card</title>
 
-<!-- UMAMI ADDED -->
-<script defer src="https://cloud.umami.is/script.js" data-website-id="8ca5b018-f00b-4957-8139-ce0333d8fce2"></script>
-
-<link crossorigin href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
-<link crossorigin href="https://i.postimg.cc" rel="preconnect"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet"/>
 
 <style>
@@ -28,7 +24,6 @@ body{background:#fff;margin:0;font-family:'Montserrat',sans-serif;color:#000;}
 .proof-image{width:100%;max-width:400px;border-radius:10px;display:block;margin:0 auto 20px auto;box-shadow:0 6px 24px rgba(0,0,0,.11);background:#f8f8f8;height:auto;}
 </style>
 </head>
-
 <body>
 
 <div class="header-block" style="text-align:center;margin-top:20px;margin-bottom:25px;">
@@ -47,57 +42,77 @@ body{background:#fff;margin:0;font-family:'Montserrat',sans-serif;color:#000;}
 <a href="#" id="shein-btn" class="shein-btn">
   <img src="https://i.postimg.cc/zBfxrrSy/c5910bd5-e5b2-4c70-b124-9560d8cbf698-link-in-bio-links-block-home-2af2051e-f17c-4f49-8af7-1eac99.webp" style="width:45px;height:45px;margin-right:12px;border-radius:50%;"/>
   <div class="text-container" style="flex-grow:1;display:flex;flex-direction:column;align-items:flex-start;margin-left:25px;">
-    <span id="giftcard-text">$750 SHEIN Gift Card</span>
+    <span>$750 SHEIN Gift Card</span>
     <span class="subtext">(Enter Email & Complete Deals)</span>
   </div>
 </a>
 
-<div class="eligible-box" id="eligible-box">Checking eligibility...</div>
+<div class="eligible-box" id="eligible-box">✅ Reward Active In Your Area</div>
 <p class="trust-text">🔒 256-bit Encryption – Powered by Trusted Partners</p>
 
 <div class="proof-headline">Real Rewards. Real People. 👇</div>
 <img class="proof-image" src="https://i.postimg.cc/ZqFcCJSC/upscalemedia-transformed.jpg"/>
 <img class="proof-image" src="https://i.postimg.cc/3NWCSpDv/upscalemedia-transformed-1.jpg"/>
 
+<!-- ====================== SCRIPTS ===================== -->
+
+<!-- UMAMI (bottom = faster mobile load) -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="8ca5b018-f00b-4957-8139-ce0333d8fce2"></script>
+
 <script>
 const eligibleBox=document.getElementById('eligible-box');
 const btn=document.getElementById('shein-btn');
 
+// redirect links
 const linkUS="https://glctrk.org/aff_c?offer_id=3091&aff_id=15802";
 const linkCA="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
 const linkGB="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
 const linkAU="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
 const linkRest="https://rewardorbit.com/r/eyJ0Ijoic2hlaW4iLCJ1IjoiNjdkNTliZmEzNjlmZTUyYjM5YTAwOTdmIiwiYSI6Ijc1MCIsInRzIjoxNzY1MjMyNDg5MjAyfQ?amount=750";
 
+// default instantly
+btn.href=linkRest;
+
+// async geolocation (non-blocking)
+(async()=>{
+  try{
+    let r=await fetch("https://ipapi.co/json/");
+    if(r.ok){
+      let d=await r.json();
+      if(d.country&&d.country_name){setEligible(d.country,d.country_name);return;}
+    }
+  }catch(e){}
+
+  try{
+    let r=await fetch("https://ipwho.is/");
+    if(r.ok){
+      let d=await r.json();
+      if(d.country_code&&d.country){setEligible(d.country_code,d.country);return;}
+    }
+  }catch(e){}
+})();
+
+// flag + routing
 function countryCodeToFlagEmoji(cc){
   if(!cc||cc.length!==2)return"";
   return String.fromCodePoint(...[...cc.toUpperCase()].map(c=>127397+c.charCodeAt()));
 }
 
 function setEligible(cc,cn){
-  eligibleBox.textContent=`✅ You are eligible – ${cn} ${countryCodeToFlagEmoji(cc)}`;
-  if(cc==="US") btn.href=linkUS;
-  else if(cc==="CA") btn.href=linkCA;
-  else if(cc==="GB") btn.href=linkGB;
-  else if(cc==="AU") btn.href=linkAU;
+  eligibleBox.textContent=`✅ Reward Active In ${cn} ${countryCodeToFlagEmoji(cc)}`;
+  if(cc==="US")btn.href=linkUS;
+  else if(cc==="CA")btn.href=linkCA;
+  else if(cc==="GB")btn.href=linkGB;
+  else if(cc==="AU")btn.href=linkAU;
   else btn.href=linkRest;
 }
 
-fetch('https://ipapi.co/json/')
-.then(r=>r.ok?r.json():Promise.reject())
-.then(d=>{if(d&&d.country&&d.country_name){setEligible(d.country,d.country_name);}else throw new Error();})
-.catch(()=>{
- fetch('https://ipwho.is/')
- .then(r=>r.ok?r.json():Promise.reject())
- .then(d=>{if(d&&d.country_code&&d.country){setEligible(d.country_code,d.country);}else throw new Error();})
- .catch(()=>{eligibleBox.textContent="✅ You are eligible 🌍";btn.href=linkRest;});
-});
-
-/* ---- UMAMI OFFER CLICK TRACKING ADDED ---- */
-btn.addEventListener('click', () => {
-  try {
-    umami.track('SHEIN Offer Click'); 
-  } catch(e) {}
+// Umami tracking with delay to fire before redirect
+btn.addEventListener('click',(e)=>{
+  e.preventDefault();
+  const url=btn.href;
+  if(window.umami) umami.track("SHEIN Offer Click");
+  setTimeout(()=>{window.location.href=url;},160);
 });
 </script>
 
