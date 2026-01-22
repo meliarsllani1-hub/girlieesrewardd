@@ -36,7 +36,6 @@
     position:relative;
   }
 
-  /* iOS top card */
   .top-card{
     background:rgba(255,255,255,.95);
     border:1px solid rgba(0,0,0,.06);
@@ -74,13 +73,23 @@
     text-decoration:none;position:relative;
     transition:transform .18s ease, filter .18s ease;
     box-shadow:0 16px 38px rgba(255,79,166,.24);
+    -webkit-tap-highlight-color:transparent;
+    user-select:none;
   }
   .shein-btn:hover{transform:scale(1.02); filter:saturate(1.03);}
   .shein-btn:active{transform:scale(0.99);}
 
-  .btn-icon{width:44px;height:44px;border-radius:50%;flex:0 0 auto;box-shadow:0 8px 18px rgba(0,0,0,.12);background:#fff;}
-  .btn-text{flex:1;display:flex;flex-direction:column;align-items:flex-start;margin-left:12px;}
-
+  .btn-icon{
+    width:44px;height:44px;border-radius:50%;
+    flex:0 0 auto;
+    box-shadow:0 8px 18px rgba(0,0,0,.12);
+    background:#fff;
+  }
+  .btn-text{
+    flex:1;display:flex;flex-direction:column;
+    align-items:flex-start;margin-left:12px;
+    min-width:0;
+  }
   .btn-title{font-size:16px;font-weight:900;line-height:1.15;}
   .btn-sub{font-size:12px;opacity:.96;margin-top:3px;font-weight:800;}
 
@@ -103,11 +112,25 @@
   }
 
   details.how{
-    margin:12px 0 18px;border:1px solid rgba(238,238,238,.95);
-    border-radius:18px;padding:12px;background:rgba(255,255,255,.96);
+    margin:12px 0 18px;
+    border:1px solid rgba(238,238,238,.95);
+    border-radius:18px;
+    padding:12px;
+    background:rgba(255,255,255,.96);
     box-shadow:var(--shadowSoft);
   }
-  details.how summary{cursor:pointer;font-weight:900;font-size:13px;color:#222;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  details.how summary{
+    cursor:pointer;
+    font-weight:900;
+    font-size:13px;
+    color:#222;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    -webkit-tap-highlight-color:transparent;
+    user-select:none;
+  }
   details.how summary:active{opacity:.75;}
 
   .tap-pill{
@@ -118,20 +141,34 @@
   .steps{margin-top:10px;font-size:13px;color:#333;line-height:1.55;font-weight:800;}
   .step-row{display:flex;gap:10px;align-items:flex-start;padding:7px 6px;border-radius:12px;}
   .step-row:not(:last-child){border-bottom:1px solid rgba(0,0,0,.04);}
-  .step-num{width:24px;height:24px;border-radius:999px;background:rgba(255,79,166,.12);color:#ff2f97;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:12px;margin-top:1px;}
+  .step-num{
+    width:24px;height:24px;border-radius:999px;
+    background:rgba(255,79,166,.12);
+    color:#ff2f97;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:900;font-size:12px;margin-top:1px;
+    flex:0 0 auto;
+  }
   .step-text{flex:1;}
 
   .proof-headline{text-align:center;font-size:16px;font-weight:900;margin:22px 0 12px;color:#222;}
-  .proof-image{width:100%;max-width:420px;border-radius:16px;display:block;margin:12px auto 16px auto;box-shadow:var(--shadow);background:#f8f8f8;height:auto;}
+  .proof-image{
+    width:100%;max-width:420px;border-radius:16px;
+    display:block;margin:12px auto 16px auto;
+    box-shadow:var(--shadow);background:#f8f8f8;height:auto;
+  }
 
   .footer-trust{text-align:center;font-size:12px;color:#8a8a8a;margin:10px 0 0;font-weight:800;}
 
   .sticky-wrap{
     position:fixed;left:0;right:0;bottom:0;z-index:50;
     padding:10px 12px 12px;background:rgba(255,255,255,.88);
-    backdrop-filter:saturate(1.2) blur(10px);border-top:1px solid rgba(240,240,240,.95);
-    box-shadow:0 -12px 30px rgba(0,0,0,.08);display:none;
+    backdrop-filter:saturate(1.2) blur(10px);
+    border-top:1px solid rgba(240,240,240,.95);
+    box-shadow:0 -12px 30px rgba(0,0,0,.08);
+    display:none;
   }
+  .sticky-inner{max-width:520px;margin:0 auto;}
   .sticky-note{text-align:center;font-size:11px;font-weight:900;color:#777;margin:0 0 6px;}
 </style>
 </head>
@@ -216,41 +253,87 @@
 
   <!-- UMAMI -->
   <script defer src="https://cloud.umami.is/script.js" data-website-id="8ca5b018-f00b-4957-8139-ce0333d8fce2"></script>
+
   <script>
     const eligibleBox = document.getElementById('eligible-box');
     const stickyWrap = document.getElementById('sticky-wrap');
     const buttons = document.querySelectorAll('.cta-link');
+
+    // redirect links (UNCHANGED)
     const linkUS="https://glctrk.org/aff_c?offer_id=3091&aff_id=15802";
     const linkCA="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
     const linkGB="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
     const linkAU="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
     const linkRest="https://rewardorbit.com/r/eyJ0Ijoic2hlaW4iLCJ1IjoiNjdkNTliZmEzNjlmZTUyYjM5YTAwOTdmIiwiYSI6Ijc1MCIsInRzIjoxNzY1MjMyNDg5MjAyfQ?amount=750";
+
+    // default instantly for ALL buttons
     buttons.forEach(b => b.href = linkRest);
+
+    // ---- GEO FIX (high-traffic safe): timeout + cache-bust + 3 providers + final fallback ----
+    const withTimeout = (p, ms=1200) =>
+      Promise.race([p, new Promise((_,rej)=>setTimeout(()=>rej(new Error("timeout")), ms))]);
+
+    const tryProvider = async (url, mapFn) => {
+      const sep = url.includes("?") ? "&" : "?";
+      const r = await withTimeout(fetch(url + sep + "_=" + Date.now(), {
+        cache: "no-store",
+        credentials: "omit"
+      }), 1200);
+      if(!r.ok) throw new Error("bad_status_" + r.status);
+      const d = await r.json();
+      const out = mapFn(d);
+      if(!out || !out.cc) throw new Error("bad_payload");
+      return out;
+    };
 
     (async()=>{
       try{
-        let r=await fetch("https://ipapi.co/json/");
-        if(r.ok){ let d=await r.json(); if(d.country&&d.country_name){setEligible(d.country,d.country_name);return;} }
+        // 1) ipapi
+        const {cc, cn} = await tryProvider("https://ipapi.co/json/", d => ({ cc: d.country, cn: d.country_name }));
+        setEligible(cc, cn);
+        return;
       }catch(e){}
-      try{ let r=await fetch("https://ipwho.is/"); if(r.ok){ let d=await r.json(); if(d.country_code&&d.country){setEligible(d.country_code,d.country);} }}
-      catch(e){}
+
+      try{
+        // 2) ipwho
+        const {cc, cn} = await tryProvider("https://ipwho.is/", d => ({ cc: d.country_code, cn: d.country }));
+        setEligible(cc, cn);
+        return;
+      }catch(e){}
+
+      try{
+        // 3) ipinfo (extra backup for high-traffic spikes)
+        const {cc, cn} = await tryProvider("https://ipinfo.io/json", d => ({ cc: d.country, cn: d.country }));
+        setEligible(cc, cn);
+        return;
+      }catch(e){}
+
+      // Final fallback: don't leave "Checking..."
+      eligibleBox.textContent = "✅ Reward available 🌍";
     })();
+    // ----------------------------------------------------------------------------------------
 
     function countryCodeToFlagEmoji(cc){
-      if(!cc||cc.length!==2)return"";
+      if(!cc || cc.length!==2) return "";
       return String.fromCodePoint(...[...cc.toUpperCase()].map(c=>127397+c.charCodeAt()));
     }
 
-    function setEligible(cc,cn){
-      eligibleBox.textContent=`✅ Reward available in ${cn} ${countryCodeToFlagEmoji(cc)}`;
+    function setEligible(cc, cn){
+      // cn may be missing on some providers; keep message clean
+      eligibleBox.textContent = cn
+        ? `✅ Reward available in ${cn} ${countryCodeToFlagEmoji(cc)}`
+        : `✅ Reward available ${countryCodeToFlagEmoji(cc)}`;
+
       let target = linkRest;
       if(cc==="US") target = linkUS;
       else if(cc==="CA") target = linkCA;
       else if(cc==="GB") target = linkGB;
       else if(cc==="AU") target = linkAU;
+
       buttons.forEach(b => b.href = target);
     }
 
+    // Umami tracking with delay to fire before redirect (UNCHANGED EVENT NAME)
     buttons.forEach((btn)=>{
       btn.addEventListener('click',(e)=>{
         e.preventDefault();
@@ -260,6 +343,7 @@
       });
     });
 
+    // show sticky CTA after small scroll
     window.addEventListener('scroll', ()=>{
       if(window.scrollY > 140) stickyWrap.style.display = 'block';
       else stickyWrap.style.display = 'none';
