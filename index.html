@@ -32,7 +32,7 @@
   .wrap{
     max-width:520px;
     margin:0 auto;
-    padding:16px 14px 92px;
+    padding:16px 14px 34px;
     position:relative;
   }
 
@@ -61,17 +61,24 @@
   }
   .sub{
     font-size:14px;color:var(--muted);
-    margin:0 0 2px;line-height:1.45;font-weight:800;
+    margin:0 0 2px;line-height:1.45;font-weight:850;
   }
 
-  /* CTA (more tappable) */
+  /* Single CTA (iOS-like, super tappable) */
   .shein-btn{
     background:linear-gradient(135deg,var(--pink),var(--pink2));
-    color:#fff;padding:15px 18px;
-    border:0;cursor:pointer;
-    display:flex;align-items:center;justify-content:flex-start;
-    border-radius:999px;width:100%;margin:12px auto 10px;
-    text-decoration:none;position:relative;
+    color:#fff;
+    padding:16px 18px;
+    border:0;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    border-radius:999px;
+    width:100%;
+    margin:12px auto 10px;
+    text-decoration:none;
+    position:relative;
     transition:transform .18s ease, filter .18s ease;
     box-shadow:0 18px 40px rgba(255,79,166,.26);
     -webkit-tap-highlight-color:transparent;
@@ -81,7 +88,7 @@
   .shein-btn:before{
     content:"";
     position:absolute;inset:0;
-    background:radial-gradient(120px 60px at 15% 40%, rgba(255,255,255,.26), transparent 60%);
+    background:radial-gradient(140px 70px at 18% 45%, rgba(255,255,255,.26), transparent 60%);
     pointer-events:none;
   }
   .shein-btn:hover{transform:scale(1.02); filter:saturate(1.04);}
@@ -94,14 +101,16 @@
     background:#fff;
   }
   .btn-text{
-    flex:1;display:flex;flex-direction:column;
-    align-items:flex-start;margin-left:12px;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    margin-left:12px;
     min-width:0;
   }
   .btn-title{font-size:16px;font-weight:900;line-height:1.15;}
   .btn-sub{font-size:12px;opacity:.96;margin-top:3px;font-weight:900;}
 
-  /* iOS-like arrow cue */
   .btn-arrow{
     width:34px;height:34px;border-radius:999px;
     background:rgba(255,255,255,.24);
@@ -120,7 +129,6 @@
     font-weight:900;
   }
 
-  /* Availability (no "checking..." hesitation) */
   .eligible-box{
     background:rgba(255,255,255,.94);
     margin:10px auto 14px;
@@ -135,22 +143,6 @@
     min-height:40px;
     display:flex;align-items:center;justify-content:center;
   }
-  .pulse{
-    position:relative;
-  }
-  .pulse:after{
-    content:"";
-    position:absolute;
-    inset:0;
-    border-radius:14px;
-    box-shadow:0 0 0 0 rgba(255,79,166,.25);
-    animation:pulse 1.35s ease-out infinite;
-    pointer-events:none;
-  }
-  @keyframes pulse{
-    0%{box-shadow:0 0 0 0 rgba(255,79,166,.22)}
-    100%{box-shadow:0 0 0 12px rgba(255,79,166,0)}
-  }
 
   .divider{
     height:1px;
@@ -158,9 +150,9 @@
     margin:12px 0 10px;
   }
 
-  /* Steps (NOT collapsed) */
+  /* Steps (visible, short, friendly) */
   .how-box{
-    margin:12px 0 14px;
+    margin:12px 0 4px;
     border:1px solid rgba(238,238,238,.95);
     border-radius:18px;
     padding:12px;
@@ -178,8 +170,13 @@
     margin-bottom:8px;
   }
   .tap-pill{
-    font-size:11px;font-weight:900;padding:5px 10px;border-radius:999px;
-    border:1px solid #f1f1f1;background:#fafafa;color:#333;
+    font-size:11px;
+    font-weight:900;
+    padding:5px 10px;
+    border-radius:999px;
+    border:1px solid #f1f1f1;
+    background:#fafafa;
+    color:#333;
   }
 
   .steps{margin-top:6px;font-size:13px;color:#333;line-height:1.55;font-weight:850;}
@@ -194,76 +191,6 @@
     flex:0 0 auto;
   }
   .step-text{flex:1;}
-
-  /* Mid-page CTA (extra click chance) */
-  .mini-cta{
-    margin:10px 0 14px;
-  }
-  .mini-btn{
-    background:#fff;
-    color:#111;
-    padding:13px 16px;
-    border-radius:16px;
-    border:1px solid rgba(0,0,0,.06);
-    box-shadow:0 10px 24px rgba(0,0,0,.06);
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    text-decoration:none;
-    font-weight:900;
-    -webkit-tap-highlight-color:transparent;
-    transition:transform .18s ease, filter .18s ease;
-  }
-  .mini-btn:hover{transform:scale(1.01);}
-  .mini-btn:active{transform:scale(0.995);}
-  .mini-left{display:flex;align-items:center;gap:10px;}
-  .mini-dot{
-    width:10px;height:10px;border-radius:999px;
-    background:linear-gradient(135deg,var(--pink),var(--pink2));
-    box-shadow:0 10px 22px rgba(255,79,166,.18);
-  }
-  .mini-sub{
-    display:block;
-    font-size:12px;
-    color:#6f6f6f;
-    font-weight:850;
-    margin-top:3px;
-  }
-
-  /* Proof section moved lower to reduce pre-click friction */
-  .proof-wrap{
-    margin-top:4px;
-  }
-  .proof-headline{text-align:center;font-size:15px;font-weight:900;margin:16px 0 10px;color:#222;}
-  .proof-image{
-    width:100%;
-    max-width:420px;
-    border-radius:16px;
-    display:block;
-    margin:10px auto 12px auto;
-    box-shadow:var(--shadow);
-    background:#f8f8f8;
-    height:auto;
-  }
-
-  .footer-trust{
-    text-align:center;
-    font-size:12px;
-    color:#8a8a8a;
-    margin:10px 0 0;
-    font-weight:850;
-  }
-
-  .sticky-wrap{
-    position:fixed;left:0;right:0;bottom:0;z-index:50;
-    padding:10px 12px 12px;background:rgba(255,255,255,.88);
-    backdrop-filter:saturate(1.2) blur(10px);
-    border-top:1px solid rgba(240,240,240,.95);
-    box-shadow:0 -12px 30px rgba(0,0,0,.08);
-    display:none;
-  }
-  .sticky-inner{max-width:520px;margin:0 auto;}
-  .sticky-note{text-align:center;font-size:11px;font-weight:900;color:#777;margin:0 0 6px;}
 </style>
 </head>
 
@@ -274,25 +201,25 @@
       <div class="top">
         <img class="avatar" src="https://i.postimg.cc/rppXNYm8/67829a8592805-66f2edc54b343-image1.png" alt=""/>
         <p class="kicker">if you’re wondering too…</p>
-        <h1 class="headline">it’s the SHEIN gift card you saw on IG 💖</h1>
+        <h1 class="headline">this is the SHEIN gift card 💖</h1>
         <p class="sub">Tap below to continue.</p>
       </div>
     </div>
 
-    <!-- CTA -->
+    <!-- SINGLE CTA ONLY -->
     <a href="#" class="shein-btn cta-link" id="shein-btn" aria-label="SHEIN Gift Card">
       <img class="btn-icon" src="https://i.postimg.cc/zBfxrrSy/c5910bd5-e5b2-4c70-b124-9560d8cbf698-link-in-bio-links-block-home-2af2051e-f17c-4f49-8af7-1eac99.webp" alt=""/>
       <div class="btn-text">
-        <span class="btn-title">Reveal SHEIN Gift Card</span>
+        <span class="btn-title">Reveal my reward</span>
         <span class="btn-sub">Continue →</span>
       </div>
       <div class="btn-arrow" aria-hidden="true">›</div>
     </a>
 
-    <p class="micro">🔒 secure • mobile-friendly</p>
+    <p class="micro">works on mobile • official partners</p>
 
-    <!-- Positive instantly (then geo updates text) -->
-    <div class="eligible-box pulse" id="eligible-box">✅ Reward available in your country 🌍</div>
+    <!-- Positive instantly; geo will refine -->
+    <div class="eligible-box" id="eligible-box">✅ Reward available in your country 🌍</div>
 
     <div class="divider"></div>
 
@@ -300,7 +227,7 @@
     <div class="how-box" id="how">
       <div class="how-head">
         <span>How it works</span>
-        <span class="tap-pill">3 quick steps</span>
+        <span class="tap-pill">3 steps</span>
       </div>
 
       <div class="steps">
@@ -310,52 +237,15 @@
         </div>
         <div class="step-row">
           <div class="step-num">2</div>
-          <div class="step-text">Enter your email + basic info</div>
+          <div class="step-text">Enter your email so it can be sent to you</div>
         </div>
         <div class="step-row">
           <div class="step-num">3</div>
-          <div class="step-text">Follow the recommended steps to claim ✅</div>
+          <div class="step-text">Follow the prompts to claim ✅</div>
         </div>
       </div>
     </div>
 
-    <!-- Mid-page extra CTA -->
-    <div class="mini-cta">
-      <a href="#" class="mini-btn cta-link" aria-label="Continue">
-        <span class="mini-left">
-          <span class="mini-dot"></span>
-          <span>
-            Continue
-            <span class="mini-sub">same button • same reward</span>
-          </span>
-        </span>
-        <span aria-hidden="true">›</span>
-      </a>
-    </div>
-
-    <!-- Proof lower (less pre-click friction). Keep if it helps your audience. -->
-    <div class="proof-wrap">
-      <div class="proof-headline">People usually ask “is it real?” 👇</div>
-      <img class="proof-image" src="https://i.postimg.cc/ZqFcCJSC/upscalemedia-transformed.jpg" alt=""/>
-      <img class="proof-image" src="https://i.postimg.cc/3NWCSpDv/upscalemedia-transformed-1.jpg" alt=""/>
-      <p class="footer-trust">Secure partners • protected connection</p>
-    </div>
-
-  </div>
-
-  <!-- Sticky CTA -->
-  <div class="sticky-wrap" id="sticky-wrap">
-    <div class="sticky-inner">
-      <p class="sticky-note">Tap to continue</p>
-      <a href="#" class="shein-btn cta-link" id="shein-btn-sticky" aria-label="SHEIN Gift Card Sticky">
-        <img class="btn-icon" src="https://i.postimg.cc/zBfxrrSy/c5910bd5-e5b2-4c70-b124-9560d8cbf698-link-in-bio-links-block-home-2af2051e-f17c-4f49-8af7-1eac99.webp" alt=""/>
-        <div class="btn-text">
-          <span class="btn-title">Reveal SHEIN Gift Card</span>
-          <span class="btn-sub">Continue →</span>
-        </div>
-        <div class="btn-arrow" aria-hidden="true">›</div>
-      </a>
-    </div>
   </div>
 
   <!-- UMAMI -->
@@ -363,7 +253,6 @@
 
   <script>
     const eligibleBox = document.getElementById('eligible-box');
-    const stickyWrap = document.getElementById('sticky-wrap');
     const buttons = document.querySelectorAll('.cta-link');
 
     // redirect links (UNCHANGED)
@@ -417,7 +306,6 @@ const linkAU="https://glctrk.org/aff_c?offer_id=1224&aff_id=15802&source=IGGGG";
 
       // Final fallback: don't leave "Checking..."
       eligibleBox.textContent = "✅ Reward available 🌍";
-      eligibleBox.classList.remove('pulse');
     })();
     // ----------------------------------------------------------------------------------------
 
@@ -430,8 +318,6 @@ const linkAU="https://glctrk.org/aff_c?offer_id=1224&aff_id=15802&source=IGGGG";
       eligibleBox.textContent = cn
         ? `✅ Reward available in ${cn} ${countryCodeToFlagEmoji(cc)}`
         : `✅ Reward available ${countryCodeToFlagEmoji(cc)}`;
-
-      eligibleBox.classList.remove('pulse');
 
       let target = linkRest;
       if(cc==="US") target = linkUS;
@@ -451,12 +337,6 @@ const linkAU="https://glctrk.org/aff_c?offer_id=1224&aff_id=15802&source=IGGGG";
         setTimeout(()=>{window.location.href=url;},160);
       });
     });
-
-    // show sticky CTA after small scroll
-    window.addEventListener('scroll', ()=>{
-      if(window.scrollY > 140) stickyWrap.style.display = 'block';
-      else stickyWrap.style.display = 'none';
-    }, {passive:true});
   </script>
 </body>
 </html>
