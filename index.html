@@ -60,11 +60,11 @@
     margin:0 0 8px;font-weight:900;letter-spacing:-.3px;
   }
   .sub{
-    font-size:14px;color:var(--muted);
-    margin:0 0 2px;line-height:1.45;font-weight:850;
+    font-size:13px;color:var(--muted);
+    margin:0 0 2px;line-height:1.45;font-weight:900;
   }
 
-  /* Single CTA (iOS-like, super tappable) */
+  /* Single CTA */
   .shein-btn{
     background:linear-gradient(135deg,var(--pink),var(--pink2));
     color:#fff;
@@ -108,8 +108,22 @@
     margin-left:12px;
     min-width:0;
   }
-  .btn-title{font-size:16px;font-weight:900;line-height:1.15;}
-  .btn-sub{font-size:12px;opacity:.96;margin-top:3px;font-weight:900;}
+  .btn-title{
+    font-size:15px;
+    font-weight:900;
+    line-height:1.15;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    max-width:100%;
+  }
+  .btn-sub{
+    font-size:12px;
+    opacity:.96;
+    margin-top:4px;
+    font-weight:900;
+    line-height:1.2;
+  }
 
   .btn-arrow{
     width:34px;height:34px;border-radius:999px;
@@ -150,7 +164,6 @@
     margin:12px 0 10px;
   }
 
-  /* Steps (visible, short, friendly) */
   .how-box{
     margin:12px 0 6px;
     border:1px solid rgba(238,238,238,.95);
@@ -191,8 +204,14 @@
     flex:0 0 auto;
   }
   .step-text{flex:1;}
+  .step-note{
+    display:block;
+    margin-top:3px;
+    font-size:12px;
+    color:#6f6f6f;
+    font-weight:900;
+  }
 
-  /* EPC helper line (soft commitment, low CTR impact) */
   .tip{
     margin:10px 0 0;
     font-size:12px;
@@ -211,46 +230,56 @@
         <img class="avatar" src="https://i.postimg.cc/rppXNYm8/67829a8592805-66f2edc54b343-image1.png" alt=""/>
         <p class="kicker">if you’re wondering too…</p>
         <h1 class="headline">this is the SHEIN gift card 💖</h1>
-        <p class="sub">Tap below to continue.</p>
+        <p class="sub">Higher value deals = faster rewards!</p>
       </div>
     </div>
 
     <!-- SINGLE CTA ONLY -->
-    <a href="#" class="shein-btn cta-link" id="shein-btn" aria-label="SHEIN Gift Card">
+    <a href="#" class="shein-btn cta-link" id="shein-btn" aria-label="$750 SHEIN Gift Card">
       <img class="btn-icon" src="https://i.postimg.cc/zBfxrrSy/c5910bd5-e5b2-4c70-b124-9560d8cbf698-link-in-bio-links-block-home-2af2051e-f17c-4f49-8af7-1eac99.webp" alt=""/>
       <div class="btn-text">
-        <span class="btn-title">Reveal my reward</span>
-        <span class="btn-sub">Continue →</span>
+        <span class="btn-title">$750 SHEIN Gift Card</span>
+        <span class="btn-sub">(Enter Email &amp; Complete Deals)</span>
       </div>
       <div class="btn-arrow" aria-hidden="true">›</div>
     </a>
 
     <p class="micro">works on mobile • official partners</p>
 
-    <!-- Positive instantly; geo will refine -->
-    <div class="eligible-box" id="eligible-box">✅ Reward available in your country 🌍</div>
+    <!-- Better default: avoids “guaranteed” expectation -->
+    <div class="eligible-box" id="eligible-box">🔍 Checking reward availability…</div>
 
     <div class="divider"></div>
 
-    <!-- Steps (visible, not collapsed) -->
+    <!-- Steps: qualified but still short -->
     <div class="how-box" id="how">
       <div class="how-head">
         <span>How it works</span>
-        <span class="tap-pill">3 steps</span>
+        <span class="tap-pill">4 steps</span>
       </div>
 
       <div class="steps">
         <div class="step-row">
           <div class="step-num">1</div>
-          <div class="step-text">Tap the pink button above 👆</div>
+          <div class="step-text">Click The Link Above 👇</div>
         </div>
+
         <div class="step-row">
           <div class="step-num">2</div>
-          <div class="step-text">Enter your email to continue</div>
+          <div class="step-text">Enter Your Email &amp; Basic Info</div>
         </div>
+
         <div class="step-row">
           <div class="step-num">3</div>
-          <div class="step-text">Follow the steps shown to claim ✅</div>
+          <div class="step-text">
+            Complete Recommended Deals
+            <span class="step-note">(Higher value deals = faster rewards!)</span>
+          </div>
+        </div>
+
+        <div class="step-row">
+          <div class="step-num">4</div>
+          <div class="step-text">Claim Your Gift Card!</div>
         </div>
       </div>
 
@@ -267,10 +296,10 @@
     const buttons = document.querySelectorAll('.cta-link');
 
     // redirect links (UNCHANGED)
-const linkUS="https://glctrk.org/aff_c?offer_id=3091&aff_id=15802";  
-const linkCA="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
-const linkGB="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802"; 
-const linkAU="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";  
+    const linkUS="https://glctrk.org/aff_c?offer_id=3091&aff_id=15802";
+    const linkCA="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
+    const linkGB="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
+    const linkAU="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
     const linkRest="https://rewardorbit.com/r/eyJ0Ijoic2hlaW4iLCJ1IjoiNjdkNTliZmEzNjlmZTUyYjM5YTAwOTdmIiwiYSI6Ijc1MCIsInRzIjoxNzY1MjMyNDg5MjAyfQ?amount=750";
 
     // default instantly for ALL buttons
@@ -309,13 +338,13 @@ const linkAU="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
       }catch(e){}
 
       try{
-        // 3) ipinfo (extra backup for high-traffic spikes)
+        // 3) ipinfo (extra backup)
         const {cc, cn} = await tryProvider("https://ipinfo.io/json", d => ({ cc: d.country, cn: d.country }));
         setEligible(cc, cn);
         return;
       }catch(e){}
 
-      // Final fallback: don't leave "Checking..."
+      // Final fallback: keep it positive but not “guaranteed in your country”
       eligibleBox.textContent = "✅ Reward available 🌍";
     })();
     // ----------------------------------------------------------------------------------------
@@ -339,7 +368,7 @@ const linkAU="https://glctrk.org/aff_c?offer_id=3105&aff_id=15802";
       buttons.forEach(b => b.href = target);
     }
 
-    // Umami tracking with delay to fire before redirect (UNCHANGED EVENT NAME)
+    // Umami tracking with delay to fire before redirect
     buttons.forEach((btn)=>{
       btn.addEventListener('click',(e)=>{
         e.preventDefault();
